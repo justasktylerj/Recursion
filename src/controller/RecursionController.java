@@ -29,4 +29,11 @@ public class RecursionController
 		calculatedValue = "the fibbonacci sequence number of" + inputValue + " is " + Integer.toString(mathTool.getFibNumber(Integer.parseInt(inputValue)));
 		return calculatedValue;
 	}
+	
+	public String doFactorial(String inputValue)
+	{
+		calculatedValue = "the factorial of" + inputValue + " is " + Integer.toString(mathTool.getFactorialNumber(Integer.parseInt(inputValue)));
+		
+		return calculatedValue;
+	}
 }

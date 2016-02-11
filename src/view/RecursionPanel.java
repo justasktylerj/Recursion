@@ -9,7 +9,7 @@ public class RecursionPanel extends JPanel
 {
 	private RecursionController baseController;
 	private JButton fibonacciButton;
-	private JButton factoralButton;
+	private JButton factorialButton;
 	private JTextField inputField;
 	private SpringLayout baseLayout;
 	private JTextArea resultsArea;
@@ -20,7 +20,7 @@ public class RecursionPanel extends JPanel
 		this.baseController = baseController;
 		baseLayout = new SpringLayout();
 		fibonacciButton = new JButton("get the fibonacci sequence for this number");
-		factoralButton = new JButton("get n!");
+		factorialButton = new JButton("get n!");
 		inputField = new JTextField(20);
 		resultsArea = new JTextArea(10,20);
 		setupPanel();
@@ -31,8 +31,8 @@ public class RecursionPanel extends JPanel
 	private void setupLayout()
 	{
 		baseLayout.putConstraint(SpringLayout.WEST, fibonacciButton, 60, SpringLayout.WEST, this);
-		baseLayout.putConstraint(SpringLayout.WEST, factoralButton, 178, SpringLayout.WEST, this);
-		baseLayout.putConstraint(SpringLayout.SOUTH, factoralButton, -4, SpringLayout.NORTH, fibonacciButton);
+		baseLayout.putConstraint(SpringLayout.WEST, factorialButton, 178, SpringLayout.WEST, this);
+		baseLayout.putConstraint(SpringLayout.SOUTH, factorialButton, -4, SpringLayout.NORTH, fibonacciButton);
 		baseLayout.putConstraint(SpringLayout.WEST, inputField, 10, SpringLayout.WEST, this);
 		baseLayout.putConstraint(SpringLayout.SOUTH, inputField, -50, SpringLayout.NORTH, fibonacciButton);
 		baseLayout.putConstraint(SpringLayout.WEST, resultsArea, 35, SpringLayout.WEST, this);
@@ -48,7 +48,7 @@ public class RecursionPanel extends JPanel
 			this.add(inputField);
 			this.add(resultsArea);
 			this.add(fibonacciButton);
-			this.add(factoralButton);
+			this.add(factorialButton);
 			resultsArea.setWrapStyleWord(true);
 			resultsArea.setLineWrap(true);
 			resultsArea.setText(baseController.getCalculatedValue());
@@ -67,8 +67,15 @@ public class RecursionPanel extends JPanel
 					}
 				}
 			});
-		
-		}
+			
+			factorialButton.addActionListener(new ActionListener()
+			{
+				public void actionPerformed(ActionEvent click)
+				{
+					String userInput = inputField.getText();
+				}
+			});
+	
 		private boolean checkInput(String input)
 		{
 			boolean isNumber = false;

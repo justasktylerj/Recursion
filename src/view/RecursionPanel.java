@@ -75,6 +75,7 @@ public class RecursionPanel extends JPanel
 					String userInput = inputField.getText();
 				}
 			});
+		}
 	
 		private boolean checkInput(String input)
 		{
